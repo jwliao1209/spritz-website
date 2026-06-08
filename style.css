@@ -98,6 +98,16 @@ section { padding: 88px 0; }
   color: var(--c-text);
   letter-spacing: 0.02em;
   margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-logo-img {
+  height: 50px;
+  width: 50px;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .nav-links {
@@ -548,6 +558,33 @@ tbody tr:hover { background: none; }
 #workshop { background: var(--c-bg); }
 
 .workshop-intro { margin-bottom: 44px; }
+
+/* Photo strip */
+.photo-strip {
+  overflow: hidden;
+  margin-top: 56px;
+}
+.photo-track {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: photo-scroll 40s linear infinite;
+}
+.photo-strip:hover .photo-track {
+  animation-play-state: paused;
+}
+.photo-track img {
+  height: 240px;
+  width: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+@keyframes photo-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 .lead {
   font-size: 1rem;
   color: var(--c-text-dim);
@@ -687,8 +724,8 @@ footer {
     box-shadow: 0 8px 24px rgba(0,0,0,0.06);
   }
 
-  #hero::before { display: none; }
-  .hero-content { padding: 0 20px; padding-top: 40px; }
+  #hero { padding-top: calc(var(--nav-h) + 32px); padding-bottom: 40px; }
+  .hero-content { padding: 0 20px; }
 
   .cards-grid { grid-template-columns: 1fr; }
   .card-wide { grid-column: auto; }
@@ -699,13 +736,10 @@ footer {
   .role-card { gap: 0; }
 
   .workshop-grid { grid-template-columns: 1fr; }
-
-  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .photo-track img { height: 180px; }
 }
 
 @media (max-width: 480px) {
   :root { --nav-h: 56px; }
   #hero h1 { font-size: 1.4rem; white-space: normal; }
-  .hero-actions { flex-direction: column; }
-  .btn { justify-content: center; }
 }
