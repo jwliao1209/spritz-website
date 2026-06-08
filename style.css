@@ -227,6 +227,30 @@ section { padding: 88px 0; }
   margin-right: 2px;
 }
 
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.hero-btn {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  padding: 8px 20px;
+  border-radius: 4px;
+  background: var(--c-accent);
+  color: #fff;
+  transition: background 0.2s;
+}
+.hero-btn:hover { background: var(--c-accent-dk); color: #fff; }
+.hero-btn-ghost {
+  background: none;
+  color: var(--c-accent);
+  border: 1px solid var(--c-accent);
+}
+.hero-btn-ghost:hover { background: var(--c-accent); color: #fff; }
+
 
 /* =====================================================
    Section Header
